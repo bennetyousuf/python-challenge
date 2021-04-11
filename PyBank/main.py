@@ -14,7 +14,11 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     #print(f"CSV Header: {csv_header}") 
 
-#row counter, total number of rows in the column “Date” output as “Total Months” is desired final output
+#set all variables and lists that need to be set and will use the for row in csv reader for loop
+#rowcount set to 0 and  uses for loop to help count total numbre of months
+#total_profit set to 0 and uses for loop to calculate total profit as loop iterates through index 1 and adds to it as loop continues
+#change_profit and monthly_change_profit set as empty lists 
+
     rowcount = 0
     total_profit = 0
     months = []
@@ -22,7 +26,7 @@ with open(csvpath) as csvfile:
     monthly_profit_change= []
         
     for row in csvreader:
-     #to count total number of months, add as the loop iterates through
+     #to count total number of months, add one as the loop iterates through rows
         rowcount += 1
         
     #to calculate total profit
@@ -54,7 +58,7 @@ max_monthly_profit_change = monthly_profit_change.index(max(monthly_profit_chang
 min_monthly_profit_change = monthly_profit_change.index(min(monthly_profit_change))+1
 
 
-
+#print stats in main.py file
 
 print('Financial Analysis') 
 print('________________________') 
